@@ -1,0 +1,150 @@
+
+
+/* the colors of correct button/neutral button/wrongbutton */
+:root{
+	--hue-neutral: 340;
+	--hue-wrong: 2 ;
+	--hue-correct: 145;
+}
+
+body {
+	
+	padding: 0;
+	margin: 0;
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-color: hsl(var(--hue),100%, 20%);
+	background-image: url('bw.gif');
+    background-size: cover;
+	font-size: 20px;
+}
+
+
+#song {
+display:flex;
+justify-content: center;
+align-items: center;
+padding: 15px;
+
+
+}
+
+.btn:hover{
+	border-color:black;
+    color: #fff;
+    cursor: pointer;
+	
+
+	
+}
+
+.start-btn:hover,.restart-btn:hover{
+	animation: effect 0.4s infinite;
+
+}
+
+.next-btn:hover{
+	animation: effect 0.4s infinite;
+
+}
+
+
+body.correct{
+	background-image: url('correct.gif');
+}
+body.wrong{
+	background-image: url('wrong.gif');
+
+}
+
+.restart-btn {
+background-color: black;
+}
+#question {
+	font-size: 30px;
+	font-family: 'Archivo', sans-serif;	
+	}
+
+.container {
+	width: 500px;
+	max-width: 80%;
+	background-color: rgb(201, 192, 192);
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.btn-grid {
+	display: grid;
+	grid-template-columns: repeat(1, auto);
+	gap: 10px;
+	margin: 30px 0;
+	
+
+}
+
+.btn {
+	--hue:var(--hue-neutral);
+	background-color: hsl(var(--hue),100%,80%) ;
+	border-radius: 40px;
+	padding: 5px 10px;
+	color: black ;
+	font-size: 30px;
+	font-family: 'Archivo', sans-serif;	
+}
+
+
+.btn.correct{
+	--hue:var(--hue-correct);
+}
+.btn.wrong{
+	--hue:var(--hue-wrong);
+}
+
+.start-btn,.next-btn,.song-btn,.restart-btn{
+	font-size: 50px;
+	font-weight: bold;
+	align-items: left,right;
+	padding: 10px 20px;
+	
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin:10px;
+
+}
+
+.hide {
+	display:none
+}
+/* the shaking button animation */
+@keyframes effect {
+	0% {
+		transform: translateX(2px) rotate(2deg);
+	}
+
+	20% {
+		transform: translateX(-8px) rotate(-8deg);
+	}
+
+	40% {
+		transform: translateX(-4px) rotate(-4deg);
+	}
+
+	60% {
+		transform: translateX(8px) rotate(8deg);
+	}
+
+	80% {
+		transform: translateX(4px) rotate(4deg);
+	}
+
+	100% {
+		transform: translateX(0px) rotate(0deg);
+	}
+}
