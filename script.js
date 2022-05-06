@@ -14,6 +14,7 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
 
+/*restart button, start button, next button*/
 restartButton.addEventListener('click', resetGame)
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -77,6 +78,7 @@ function showQuestion(question) {
  })
 }
 
+/*resets the state for the next question (gets rid of next button)*/
 function resetState() {
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
@@ -85,11 +87,11 @@ function resetState() {
       audio.pause();
 }
 }
+/*selecting correct answer feature*/
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct)
-    //songButton.classList.add('hide')
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
@@ -106,7 +108,7 @@ function selectAnswer(e) {
     }
 }
 
-/* correct/wrong functions */
+/* lets user know if answer is correct or wrong */
 function setStatusClass(element, correct){
     clearStatusClass(element)
     if (correct) {
