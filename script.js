@@ -38,7 +38,6 @@ function startGame() {
     shuffledQuestions = questions.sort(()=> Math.random())
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
-    //songButton.classList.remove('hide')
     testsong.play();
     setNextQuestion()
 
